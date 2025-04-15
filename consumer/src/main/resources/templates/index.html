@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Received Messages</title>
+</head>
+<body>
+<h2>Повідомлення з черги:</h2>
+<ul>
+    <li th:each="msg : ${messages}" th:text="${msg}"></li>
+</ul>
+<a href="/logout">Вийти</a>
+</body>
+</html>
