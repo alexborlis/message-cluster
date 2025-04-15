@@ -21,4 +21,6 @@ echo "🚀 Deploying Consumer..."
 kubectl apply -f k8s/consumer-deployment.yaml
 
 echo "🌐 Exposing consumer service..."
+echo "⏳ Waiting for consumer pod to be ready..."
+kubectl wait --for=condition=Ready pod -l app=consumer --timeout=60s
 minikube service consumer
